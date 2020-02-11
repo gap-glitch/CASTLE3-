@@ -90,25 +90,77 @@ var AirPlane = function(){
 this.mesh = new THREE.Object3D();
 this.mesh.name = "airPlane";
 
+//textures 
+var texturewalls = new THREE.TextureLoader().load('castle/CASTLE3-/assets/cobblestone.jpg');
+//material
+var cobblestone = new THREE.MeshBasicMaterial({map: texturewalls});
+
 // Create base , roof
-var geomCockpit = new THREE.BoxGeometry(500,500,200,1,1,1);
+var geomCockpit = new THREE.BoxGeometry(6000,400,200,1,1,1);
 var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
 var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
 cockpit.castShadow = true;
 cockpit.receiveShadow = true;
 this.mesh.add(cockpit);
 
-
-var geomCockpit = new THREE.BoxGeometry(300,600,200,1,1,1);
+// wall parts
+var geomCockpit = new THREE.BoxGeometry(50,200,200,1,1,1);
 var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
 var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
-cockpit.position.x = -400;
+cockpit.position.y = 150
+cockpit.position.x = 0
+cockpit.castShadow = true;
+cockpit.receiveShadow = true;
+this.mesh.add(cockpit);
+
+var geomCockpit = new THREE.BoxGeometry(50,200,200,1,1,1);
+var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
+var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
+cockpit.position.y = 150
+cockpit.position.x = 70
+cockpit.castShadow = true;
+cockpit.receiveShadow = true;
+this.mesh.add(cockpit);
+
+var geomCockpit = new THREE.BoxGeometry(50,200,200,1,1,1);
+var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
+var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
+cockpit.position.y = 150
+cockpit.position.x = -70
+cockpit.castShadow = true;
+cockpit.receiveShadow = true;
+this.mesh.add(cockpit);
+
+var geomCockpit = new THREE.BoxGeometry(50,200,50,1,1,1);
+var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
+var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
+cockpit.position.y = 170
+cockpit.position.x = -600
+cockpit.castShadow = true;
+cockpit.receiveShadow = true;
+this.mesh.add(cockpit);
+
+var geomCockpit = new THREE.BoxGeometry(50,200,50,1,1,1);
+var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
+var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
+cockpit.position.y = 170
+cockpit.position.x = 600
+cockpit.castShadow = true;
+cockpit.receiveShadow = true;
+this.mesh.add(cockpit);
+
+//tower1
+var geomCockpit = new THREE.BoxGeometry(200,500,200,1,1,1);
+var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
+var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
+cockpit.position.x = -300;
 cockpit.position.y = 40
 cockpit.castShadow = true;
 cockpit.receiveShadow = true;
 this.mesh.add(cockpit);
 
-var geomCockpit = new THREE.BoxGeometry(350,600,250,1,1,1);
+//tower2
+var geomCockpit = new THREE.BoxGeometry(200,500,200,1,1,1);
 var matCockpit = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.FlatShading});
 var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
 cockpit.position.x = 300;
@@ -116,11 +168,20 @@ cockpit.position.y = 50
 cockpit.castShadow = true;
 cockpit.receiveShadow = true;
 this.mesh.add(cockpit);
-
-var geomCockpit = new THREE.ConeGeometry(100,600,250,1,1,1);
-var matCockpit = new THREE.MeshPhongMaterial({color:Colors.red, shading:THREE.FlatShading});
+//roof
+var geomCockpit = new THREE.ConeGeometry(200,400,250,1,1,1);
+var matCockpit = new THREE.MeshPhongMaterial({color:Colors.brownDark, shading:THREE.FlatShading});
 var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
 cockpit.position.x = 300;
+cockpit.position.y = 400
+cockpit.castShadow = true;
+cockpit.receiveShadow = true;
+this.mesh.add(cockpit);
+
+var geomCockpit = new THREE.ConeGeometry(200,400,250,1,1,1);
+var matCockpit = new THREE.MeshPhongMaterial({color:Colors.brownDark, shading:THREE.FlatShading});
+var cockpit = new THREE.Mesh(geomCockpit, matCockpit);
+cockpit.position.x = -300;
 cockpit.position.y = 400
 cockpit.castShadow = true;
 cockpit.receiveShadow = true;
